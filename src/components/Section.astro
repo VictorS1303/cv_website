@@ -1,0 +1,66 @@
+---
+const {className, id} = Astro.props
+---
+
+<section class={className} id={id}>
+    <div class="section-wrapper">
+        <div>
+            <h1>Hey</h1>
+            <p>Hey</p>
+        </div>
+
+        <div>
+            <h1>Goodbye</h1>
+            <p>Hey</p>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    section
+    {
+        height: 100vh;
+        width: 100vw;
+        scroll-snap-type: y mandatory;
+    }
+
+
+    section:nth-child(odd) > div,
+    section:nth-child(even) > div
+    {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        height: inherit;
+        width: inherit;
+        scroll-snap-align: center;
+    }
+ 
+    section:nth-child(odd) > div
+    {
+        background-color: var(--odd-section-background-color);
+        color: var(--odd-section-text-color);
+    }
+
+    section:nth-child(even) > div
+    {
+        background-color: var(--even-section-background-color);
+        color: var(--even-section-text-color);
+    }
+
+
+    @media screen and (min-width: 768px)
+    {
+        section:nth-child(odd) > div,
+        section:nth-child(even) > div
+        {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+</style>
+

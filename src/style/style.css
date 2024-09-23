@@ -4,7 +4,7 @@
 :root
 {
    /* FONT SIZES */
-   --heading-one-font-size: clamp(1.5625rem, 3.5rem + -2.5vw, 3rem);
+   --heading-one-font-size: calc(1rem + clamp(1.5625rem, 3.5rem + -2.5vw, 3rem));
    --paragraph-font-size: clamp(1rem, 0.913rem + 0.4348vw, 2rem);
 
    /* COLORS */
@@ -27,7 +27,8 @@
     user-select: none;
 }
 
-body{
+body
+{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -35,7 +36,7 @@ body{
 
 h1
 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: var(--heading-one-font-size, 40px);
 }
