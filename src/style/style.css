@@ -15,6 +15,10 @@
    --even-section-background-color: #fff;
    --even-section-text-color: #0f9bc9;
    --even-section-paragraph-color: #8db5c2;
+
+   /* Naivgation */
+   --even-link-color: #fff;
+   --odd-link-color: #8db5c2;
 }
 
 
@@ -28,12 +32,15 @@
     user-select: none;
 }
 
+
+
 body
 {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    counter-reset: section;
+    scroll-behavior: smooth;
+
 }
 
 main
@@ -58,9 +65,13 @@ p
     font-size: var(--paragraph-font-size, 22px);
 }
 
-h1::before
+li
 {
-    counter-increment: section;
-    content: "0" counter(section) " ";
-    font-size: 30px;
+    list-style: none;
+}
+
+a
+{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
 }
