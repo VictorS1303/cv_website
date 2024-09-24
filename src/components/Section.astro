@@ -14,7 +14,9 @@ const {className, id} = Astro.props
     {
         height: 100vh;
         width: 100vw;
+        
         scroll-snap-align: start;
+        scroll-snap-stop: always;
 
         &:is(:nth-child(even), :nth-child(odd)) > div
         {
