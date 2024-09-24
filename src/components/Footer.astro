@@ -1,0 +1,72 @@
+---
+import {socials} from '../exports/footer.js'
+---
+
+<footer class="footer" id="footer">
+    <h3 class="name">
+        Victor Schweitz
+    </h3>
+
+    <h3 class="school">
+        MMD | KEA
+    </h3>
+
+    <ul class="socials">
+        {
+            socials.map((social) =>
+            (
+                <li title={social.title}>
+                    <a href={social.href} target={social.target}>
+                        <i class={social.socialChannelIcon}></i>
+                    </a>
+                </li>
+            ))
+        }
+        
+    </ul>
+</footer>
+
+
+<style>
+    footer
+    {
+        font-family: 'Roboto', sans-serif;
+        position: relative;
+        margin-top: auto;
+        height: 30dvh;
+        width: 100dvw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        & > *
+        {
+            color: var(--footer-color);
+        }
+
+        & .socials
+        {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            gap: 20px;
+
+            & li a i
+            {
+                color: var(--footer-color);
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px)
+    {
+        footer
+        {
+            flex-direction: row;
+            height: 70px;
+        }
+    }
+</style>
