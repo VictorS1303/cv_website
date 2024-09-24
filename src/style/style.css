@@ -14,6 +14,7 @@
    --odd-section-text-color: #fff;
    --even-section-background-color: #fff;
    --even-section-text-color: #0f9bc9;
+   --even-section-paragraph-color: #8db5c2;
 }
 
 
@@ -33,6 +34,7 @@ body
     display: flex;
     flex-direction: column;
 }
+
 
 h1
 {
