@@ -33,6 +33,7 @@ body
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    counter-reset: section;
 }
 
 main
@@ -55,4 +56,11 @@ p
     font-weight: normal;
     line-height: 1.6;
     font-size: var(--paragraph-font-size, 22px);
+}
+
+h1::before
+{
+    counter-increment: section;
+    content: "0" counter(section) " ";
+    font-size: 30px;
 }
