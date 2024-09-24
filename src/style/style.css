@@ -32,7 +32,10 @@
     user-select: none;
 }
 
-
+html
+{
+    
+}
 
 body
 {
@@ -40,7 +43,7 @@ body
     display: flex;
     flex-direction: column;
     scroll-behavior: smooth;
-
+    counter-reset: section;
 }
 
 main
@@ -55,6 +58,30 @@ h1
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: var(--heading-one-font-size, 40px);
+}
+
+h1::before
+{
+    content: "0" counter(section) " ";
+    counter-increment: section;
+    font-size: 1.8rem;
+    margin-right: 5px;
+}
+
+section:nth-child(even)
+{
+    & h1
+    {
+        border-bottom: 2px solid var(--even-section-text-color);
+    }
+}
+
+section:nth-child(odd)
+{
+    & h1
+    {
+        border-bottom: 2px solid var(--odd-section-text-color);
+    }
 }
 
 p
