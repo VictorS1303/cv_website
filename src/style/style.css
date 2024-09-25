@@ -7,6 +7,8 @@
    --heading-one-font-size: clamp(1rem + 1.5625rem, 3.5rem + -2.5vw, 3rem);
    --paragraph-font-size: clamp(1rem, 0.913rem + 0.4348vw, 2rem);
    --chevron-font-size: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+   --li-font-size: clamp(1rem, 0.913rem + 0.4348vw, 2rem);
+   --small-font-size: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
 
    /* COLORS */
 
@@ -17,12 +19,26 @@
    --even-section-text-color: #0f9bc9;
    --even-section-paragraph-color: #8db5c2;
 
+   /* Skills List */
+   --skills-list-color: #fff;
+   --skills-list-background-color: #0f9bc9;
+
    /* Naivgation */
    --even-link-color: #fff;
    --odd-link-color: #8db5c2;
 
    /* Footer */
    --footer-color: #8db5c2;
+
+   /* Radii */
+   --base-border-radius: 10px;
+
+   /* Shadows */
+   --text-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+   --box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+
+   /* Overlay */
+   --overlay-background-color: rgba(0, 0, 0, .4);
 }
 
 
@@ -112,4 +128,39 @@ img
     height: auto;
     width: 100%;
     object-fit: cover;
+}
+
+.beginner
+{
+    font-style: italic;
+}
+
+.more-to-learn
+{
+    font-style: 800;
+}
+
+.fluent
+{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.overlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--overlay-background-color);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity .15s ease-in;
+}
+
+.overlay-active
+{
+    opacity: 1;
+    transition: opacity .15s ease-in;
 }
