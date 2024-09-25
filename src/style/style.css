@@ -4,8 +4,9 @@
 :root
 {
    /* FONT SIZES */
-   --heading-one-font-size: calc(1rem + clamp(1.5625rem, 3.5rem + -2.5vw, 3rem));
+   --heading-one-font-size: clamp(1rem + 1.5625rem, 3.5rem + -2.5vw, 3rem);
    --paragraph-font-size: clamp(1rem, 0.913rem + 0.4348vw, 2rem);
+   --chevron-font-size: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
 
    /* COLORS */
 
@@ -35,11 +36,6 @@
     user-select: none;
 }
 
-html
-{
-    
-}
-
 body
 {
     min-height: 100vh;
@@ -58,9 +54,12 @@ main
 
 h1
 {
+    width: fit-content;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: var(--heading-one-font-size, 40px);
+    margin-bottom: 10px;
+    white-space: nowrap;
 }
 
 h1::before
@@ -91,8 +90,9 @@ p
 {
     font-family: 'Poppins', sans-serif;
     font-weight: normal;
-    line-height: 1.6;
-    font-size: var(--paragraph-font-size, 22px);
+    line-height: 1.4;
+    font-size: var(--paragraph-font-size);
+    max-width: 35ch;
 }
 
 li
@@ -104,4 +104,12 @@ a
 {
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
+}
+
+img
+{
+    display: block;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
 }

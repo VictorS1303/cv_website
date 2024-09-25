@@ -8,18 +8,20 @@ import Section from '../components/Section.astro'
         <div>
             <h1>About</h1>
             <p> 
-                Hey
+                My name's Victor Schweitz, a 24 year old MMD student at KEA with a big passion for web development and developing my skills in that field.
             </p>
         </div>
-        <div> 
-            Fill me out
-        </div>
+        <img src="src/images/profile_image.jpg" class="profile-image" alt="profile_image">
+
+        <i class="fas fa-chevron-down"></i>
     </Section>
+
+
     <Section id="skills">
         <div>
-            <h1>About</h1>
+            <h1>Skills</h1>
             <p>
-                Hey
+                Here you can see a list of the technologies I have been working with throughout my study.
             </p>
         </div>
         <div>
@@ -37,7 +39,38 @@ import Section from '../components/Section.astro'
         <div>
             Fill me out
         </div>
-    </Section>
-
-    
+    </Section>    
 </Layout>
+
+
+<style>
+    .profile-image
+    {
+        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+        height: 200px;
+        width: 200px;
+        border-radius: 10px;
+    }
+    
+    i.fas.fa-chevron-down
+    {
+        position: absolute;
+        bottom: 30px;
+        font-size: calc(var(--chevron-font-size) * 1.3);
+        animation: downFade .8s linear infinite;
+    }
+
+    @keyframes downFade
+    {
+        from
+        {
+            opacity: 1;
+            bottom: 30px;
+        }
+        to
+        {
+            opacity: 0;
+            bottom: 10px;
+        }
+    }
+</style>
