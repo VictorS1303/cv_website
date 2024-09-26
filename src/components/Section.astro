@@ -19,6 +19,13 @@ const {className, id} = Astro.props
         scroll-snap-align: start;
         scroll-snap-stop: always;
 
+        & .section-wrapper
+        {
+            outline: 2px solid #fff;
+        }
+
+        
+
         .section-wrapper > div h1
         {
             text-align: center;            
@@ -27,6 +34,7 @@ const {className, id} = Astro.props
 
         &:is(:nth-child(even), :nth-child(odd)) > div
         {
+          
             display: flex;
             justify-content: center;
             flex-direction: column;
