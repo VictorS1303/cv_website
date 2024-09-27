@@ -1,9 +1,5 @@
----
-const currentPage = new URL(Astro.request.url).hash
----
-
 <nav class="main-nav" id="main_nav">
-    <a href="#about">
+    <a href="#top">
         <h2 class="logo">
             VS
         </h2>
@@ -13,28 +9,55 @@ const currentPage = new URL(Astro.request.url).hash
 
     <ul>
         <li>
-            <a href="#about" class={currentPage === '#about' ? 'active' : ''}>01</a>
+            <a href="#about">01<span>. About</span></a>
         </li>
         <li>
-            <a href="#skills" class={currentPage === '#skills' ? 'active' : ''}>02</a>
+            <a href="#skills">02<span>. Skills</span></a>
         </li>
         <li>
-            <a href="#projects" class={currentPage === '#projects' ? 'active' : ''}>03</a>
+            <a href="#projects">03<span>. Projects</span></a>
         </li>
     </ul>
 </nav>
 
 <style>
+
+
+
     nav
     {
-            position: fixed;
-            height: 70px;
-            width: 100vw;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 40px;
-            z-index: 1000;
+        position: fixed;
+        height: 70px;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 30px;
+        padding: 30px 40px;
+        z-index: 1000;
+        background-color: #fff;
+        white-space: nowrap;
+
+            & h1
+            {
+                grid-column: 1;
+            }
+
+            & ul
+            {
+                grid-column: -1;
+                justify-self: end;
+            }
+
+            & ul li a
+            {
+                color: #9fc1cc;
+
+                & span
+                {
+                    display: none;
+                    
+                }
+            }
 
             & a h2.logo
             {
@@ -58,16 +81,47 @@ const currentPage = new URL(Astro.request.url).hash
 
         & ul li a
         {
+            position: relative;
             display: inline-block;
             color: var(--even-link-color);
             font-size: 1.3rem;
-            transition: font-size .3s ease-in;
+
+            &:not(.active)::before
+            {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                height: 1px;
+                width: 0;
+                border-bottom: 2px solid #9fc1cc;
+                transition: width .15s ease-in;
+            }
+
+            &:hover:not(.active)::before
+            {
+                width: 100%;
+                transition: width .15s ease-in;
+            }
 
             &.active
             {
-                font-size: 1.8rem;
-                transition: font-size .3s ease-in;
+                border-bottom: 2px solid #9fc1cc;
+
             }
+        }
+    }
+
+
+    nav ul li a
+    {
+   
+    }
+
+    @media (min-width: 768px)
+    {
+        nav ul li a span
+        {
+            display: inline-block;
         }
     }
 </style>

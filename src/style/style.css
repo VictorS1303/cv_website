@@ -52,6 +52,11 @@
     user-select: none;
 }
 
+html
+{
+    scroll-behavior: smooth;
+}
+
 body
 {
     min-height: 100vh;
@@ -63,10 +68,8 @@ body
 
 main
 {
-    display: grid;
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    
+    flex: 1;
 }
 
 h1

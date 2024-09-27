@@ -13,16 +13,12 @@ const {className, id} = Astro.props
     section
     {
        
-        height: 100vh;
+        height: 100dvh;
         width: 100vw;
         
         scroll-snap-align: start;
         scroll-snap-stop: always;
 
-        & .section-wrapper
-        {
-            outline: 2px solid #fff;
-        }
 
         
 
@@ -57,7 +53,7 @@ const {className, id} = Astro.props
         {
             background-color: var(--even-section-background-color);
             color: var(--even-section-text-color);
-            /* text-align: right; */
+            
 
             & p
             {
@@ -66,25 +62,26 @@ const {className, id} = Astro.props
         }
     }
 
-   
+    section#projects .section-wrapper
+    {
+        justify-content: center;
+        flex-direction: column;
+        gap: 80px;
+    }
+
+
     @media screen and (min-width: 768px)
     {
         section:is(:nth-child(odd), :nth-child(even)) > div
         {
             flex-direction: row;
             justify-content: space-around;
-            /* gap: -40px; */
         }
 
         section:nth-child(odd) > div
         {
             text-align: left;
-        }
-        
-        section:nth-child(even) > div
-        {
-            /* text-align: right; */
-        }
+        }      
     }
 </style>
 

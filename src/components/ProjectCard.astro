@@ -1,0 +1,88 @@
+---
+import {projectCards} from '../exports/project_cards.js'
+---
+
+
+
+<div class="project-cards-container">
+    {
+       projectCards.map((projectCard) =>
+       (
+        <div class="project-card">
+            <img src={projectCard.projectCardImage} class="project-card-image">
+
+            <div class="project-card-info">
+                <h3 class="project-name">
+                    <span class="project-number">{projectCard.projectCardNumber}. </span> {projectCard.projectCardName}
+                </h3>
+
+                <div>
+                    <a href={projectCard.githubLink} target={projectCard.target}>
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href={projectCard.projectWebURL} target={projectCard.target}>
+                        <i class="fas fa-globe"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+       ))
+    }
+</div>
+
+
+<style>
+
+    .project-cards-container
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 60px;
+        height: 400px;
+        overflow-x: scroll;
+    }
+  
+    .project-card
+    {
+        font-family: 'Roboto', sans-serif;
+        height: 250px;
+        width: 300px;
+        aspect-ratio: 16/9;
+        border-radius: var(--base-border-radius);
+        transition: box-shadow .2s ease-in;
+
+        & .project-card-image
+        {
+            border-radius: inherit;
+        }
+    
+        &:hover img
+        {
+            box-shadow: var(--box-shadow);
+            transition: box-shadow .2s ease-in;
+        }
+
+        & .project-card-info
+        {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 7px;
+            color: var(--odd-section-text-color);
+
+            & i
+            {
+                color: var(--odd-section-text-color);
+                font-size: 20px;
+                cursor: pointer;
+
+
+                &:first-child
+                {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+</style>

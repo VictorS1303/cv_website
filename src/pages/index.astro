@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Section from '../components/Section.astro'
-
+import ProjectCard from '../components/ProjectCard.astro'
 ---
 
 <Layout title="Home">
     <Section id="about">
-        <div>
+        <div class="about-wrapper">
             <h1>About</h1>
             <p> 
                 My name's Victor Schweitz, a 24 year old MMD student at KEA with a big passion for frontend web development and developing my skills in that field.
@@ -18,7 +18,7 @@ import Section from '../components/Section.astro'
 
 
     <Section id="skills">
-        <div>
+        <div class="skills-wrapper">
             <h1>Skills</h1>
             <p>
                 I have worked with a couple of different and relevant technologies throughout my study, which can be seen in the list.
@@ -43,6 +43,9 @@ import Section from '../components/Section.astro'
                 <li class="beginner" title="supabase">
                     Supabase
                 </li>
+                <li class="more-to-learn" title="github">
+                    Git/Github
+                </li>
             </ul>
 
             <div class="list-explanation">
@@ -55,18 +58,13 @@ import Section from '../components/Section.astro'
 
     <Section id="projects">
         <div>
-            <h1>Skills</h1>
+            <h1>Projects</h1>
             <p>
-                I have worked with a couple of different and relevant technologies throughout my study, which can be seen in the list.
-                It's no problem if you use something different, since I'm always up for learning something new.
+                I have made a few projects to show off my skills. You can explore them from the cards underneath:
             </p>
         </div>
-        <div>
-            <p>
-                I have worked with a couple of different and relevant technologies throughout my study, which can be seen in the list.
-                It's no problem if you use something different, since I'm always up for learning something new.
-            </p>
-        </div>
+
+        <ProjectCard />
     </Section>
 </Layout>
 
@@ -74,10 +72,10 @@ import Section from '../components/Section.astro'
 <style>
     .profile-image
     {
-        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-        height: 200px;
-        width: 200px;
+        max-height: 300px;
+        max-width: 60vw;
         border-radius: 10px;
+        object-fit: cover;
     }
 
 
@@ -91,7 +89,8 @@ import Section from '../components/Section.astro'
         font-family: 'Roboto', sans-serif;
         color: var(--skills-list-color);
         background-color: var(--skills-list-background-color);
-        height: 300px;
+        height: fit-content;
+        padding: 40px 0;
         width: 80vw;
         max-width: 300px;
         border-radius: var(--base-border-radius);
@@ -114,6 +113,12 @@ import Section from '../components/Section.astro'
         font-size: var(--small-font-size);
     }
 
+    small
+    {
+        cursor: pointer;
+    }
+  
+
     @media screen and (min-width: 768px)
     {
         .profile-image
@@ -126,11 +131,11 @@ import Section from '../components/Section.astro'
 
 
 <script>
+
     const skillsList = document.querySelector('.skills-list') as HTMLElement
     const overlay = document.querySelector('.overlay') as HTMLElement
 
     skillsList.addEventListener('mouseover', (e) => showTechnologyLogo(e))
-
 
     function showTechnologyLogo(e)
     {
