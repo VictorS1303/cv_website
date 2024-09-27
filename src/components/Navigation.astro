@@ -24,92 +24,94 @@
 
 
 
-    nav
-    {
+nav
+{
         position: fixed;
         height: 70px;
         width: 100vw;
         display: grid;
         grid-template-columns: auto 1fr auto;
+        align-items: center;
         gap: 30px;
         padding: 30px 40px;
         z-index: 1000;
         background-color: #fff;
         white-space: nowrap;
+        box-shadow: var(--box-shadow);
 
-            & h1
-            {
-                grid-column: 1;
-            }
-
-            & ul
-            {
-                grid-column: -1;
-                justify-self: end;
-            }
-
-            & ul li a
-            {
-                color: #9fc1cc;
-
-                & span
-                {
-                    display: none;
-                    
-                }
-            }
-
-            & a h2.logo
-            {
-                display: block;
-                color: #9fc1cc;
-            }
-
-
-            & ul li
-            {
-                display: inline-flex;
-            }
-
-            & ul li:not(:last-child)
-            {
-                margin-right: 20px;
-            }
-
+        & h1
+        {
+            grid-column: 1;
         }
-       
+
+        & ul
+        {
+            grid-column: -1;
+            justify-self: end;
+        }
 
         & ul li a
         {
-            position: relative;
-            display: inline-block;
-            color: var(--even-link-color);
-            font-size: 1.3rem;
+            color: #9fc1cc;
 
-            &:not(.active)::before
+            & span
             {
-                content: '';
-                position: absolute;
-                bottom: -2px;
-                height: 1px;
-                width: 0;
-                border-bottom: 2px solid #9fc1cc;
-                transition: width .15s ease-in;
-            }
-
-            &:hover:not(.active)::before
-            {
-                width: 100%;
-                transition: width .15s ease-in;
-            }
-
-            &.active
-            {
-                border-bottom: 2px solid #9fc1cc;
-
+                display: none;
+                
             }
         }
+
+        & a h2.logo
+        {
+            display: block;
+            color: #9fc1cc;
+        }
+
+
+        & ul li
+        {
+            display: inline-flex;
+        }
+
+        & ul li:not(:last-child)
+        {
+            margin-right: 20px;
+        }
+
     }
+    
+
+    & ul li a
+    {
+        position: relative;
+        display: inline-block;
+        color: var(--even-link-color);
+        font-size: 1.3rem;
+
+        &::before
+        {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            height: 1px;
+            width: 0;
+            border-bottom: 2px solid #9fc1cc;
+            transition: width .15s ease-in;
+        }
+
+        &:hover::before
+        {
+            width: 100%;
+            transition: width .15s ease-in;
+        }
+
+        &.active
+        {
+            border-bottom: 2px solid #9fc1cc;
+
+        }
+    }
+}
 
 
     nav ul li a
