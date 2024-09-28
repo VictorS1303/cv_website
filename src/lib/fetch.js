@@ -3,10 +3,15 @@ export const data = await fetch('https://neiaeukcnxhxvkwfnjlu.supabase.co/rest/v
     method: 'GET',
     headers:
     {
-        apikey: 'xxx',
+        apikey: '',
     }
 })
     .then(res => res.json())
     .catch((error) => console.log(error))
 
 console.log(data)
+
+
+
+
+
