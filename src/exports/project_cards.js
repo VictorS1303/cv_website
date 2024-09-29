@@ -2,7 +2,7 @@
 export const projectCards =
 [
     {
-        'projectCardImage': 'src/images/project_cards/js_cheatsheet.png',
+        'projectCardImage': 'images/project_cards/js_cheatsheet.png',
         'projectCardNumber': '1',
         'projectCardName': 'JS Cheat Sheet',
         'githubLink': 'https://github.com/VictorS1303/js_cheatsheet',
